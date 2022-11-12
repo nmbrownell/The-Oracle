@@ -33,11 +33,4 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <ContentWithTargetPath Include="PunDB\punsdb.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <TargetPath>%(Filename)%(Extension)</TargetPath>
-    </ContentWithTargetPath>
-  </ItemGroup>
-
 </Project>

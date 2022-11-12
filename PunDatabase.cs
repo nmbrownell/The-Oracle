@@ -13,7 +13,7 @@ namespace The_Oracle
 #if DEBUG
         string datasource = @"Data Source=..\..\..\PunDB\punsdb-dev.db";
 #else
-        string datasource = @"Data Source=.\punsdb.db";
+        string datasource = @"Data Source=..\..\..\PunDB\punsdb.db";
 #endif
 
         private void Open()
