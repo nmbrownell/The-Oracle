@@ -20,36 +20,116 @@ namespace The_Oracle
     /// </summary>
     public partial class MainWindow : Window
     {
-        PunDatabase punDb;
+        PunLogic punLogic = new PunLogic();
+        PunEntry activeEntry = null;
 
         public MainWindow()
         {
             InitializeComponent();
-            punDb = new PunDatabase();
-            //imgCrystalBall.Source =;
+
+            UpdateTags();
         }
 
-        private void btnOpenDev_Click(object sender, RoutedEventArgs e)
+        private void UpdateTags()
         {
-            
-            punDb.Open(database_target.DEV);
+            string[] topics = punLogic.GetAllTags();
+            wrpTags.Children.Clear();
+            foreach (string topic in topics)
+            {
+                wrpTags.Children.Add(new Tag(topic));
+            }
         }
 
-        private void btnCloseDev_Click(object sender, RoutedEventArgs e)
+        private void btnSearchByCriteria_Click(object sender, RoutedEventArgs e)
         {
-            punDb.Close();
+            List<string> tags = new List<string>();
+            foreach (Tag tag in this.wrpTags.Children)
+            {
+                if (tag.Selected)
+                {
+                    tags.Add(tag.Text);
+                }
+            }
+
+            PunEntry entry = punLogic.GetRandom(qtslQuality.Min, qtslQuality.Max, tags.ToArray());
+            tbxPunDisplay.Text = entry.Text;
         }
 
         private void btnFetchAPun_Click(object sender, RoutedEventArgs e)
         {
-            PunEntry[] entries = punDb.FetchByQuality(0, 3);
+            List<string> tags = new List<string>();
+            foreach (Tag tag in this.wrpTags.Children)
+            {
+                if (tag.Selected)
+                {
+                    tags.Add(tag.Text);
+                }
+            }
 
-            tbxPunDisplay.Text = entries[(new Random()).Next(0, entries.Length - 1)].Text;
+            activeEntry = punLogic.GetRandom(qtslQuality.Min, qtslQuality.Max, tags.ToArray());
+            UpdateDisplayedInfo();
+        }
+
+        private void UpdateDisplayedInfo()
+        {
+            if (activeEntry != null && activeEntry.UID > 0)
+            {
+                tbxPunDisplay.Text = activeEntry.Text;
+                lblQuality.Content = "Quality: " + (activeEntry.Quality + 1);
+                wrpEntryTags.Children.Clear();
+                foreach (string tag in activeEntry.SplitTags)
+                {
+                    wrpEntryTags.Children.Add(new BasicTag(tag));
+                }
+                if (activeEntry.Used)
+                {
+                    imgComplete.Visibility = Visibility.Visible;
+                    btnMarkUsed.Content = "Mark Unused";
+                }
+                else
+                {
+                    imgComplete.Visibility = Visibility.Hidden;
+                    btnMarkUsed.Content = "Mark Used";
+                }
+            }
         }
 
         private void btnMarkUsed_Click(object sender, RoutedEventArgs e)
         {
+            if (activeEntry != null && activeEntry.UID > 0)
+            {
+                activeEntry = punLogic.MarkUsed(activeEntry, !activeEntry.Used);
+            }
 
+            UpdateDisplayedInfo();
+            UpdateTags();
+        }
+
+        private void btnClearTags_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Tag tag in this.wrpTags.Children)
+            {
+                if (tag.Selected)
+                {
+                    tag.ToggleSelection();
+                }
+            }
+        }
+
+        private void btnClearQuality_Click(object sender, RoutedEventArgs e)
+        {
+            qtslQuality.Clear();
+        }
+
+        private void btnAllTags_Click(object sender, RoutedEventArgs e)
+        {
+            foreach(Tag tag in this.wrpTags.Children)
+            {
+                if (!tag.Selected)
+                {
+                    tag.ToggleSelection();
+                }
+            }
         }
     }
 }

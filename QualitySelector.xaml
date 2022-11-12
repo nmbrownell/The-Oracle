@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="The_Oracle.QualitySelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:The_Oracle"
+             mc:Ignorable="d" >
+    <Grid>
+        <Border Name="myBorder" BorderBrush="Black" BorderThickness="0" Margin="0" CornerRadius="11" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition SharedSizeGroup="A"/>
+                <ColumnDefinition SharedSizeGroup="B" Width="3*"/>
+                <ColumnDefinition SharedSizeGroup="A"/>
+            </Grid.ColumnDefinitions>
+            <Grid.OpacityMask>
+                <VisualBrush Visual="{Binding ElementName=myBorder}" />
+            </Grid.OpacityMask>
+            
+            <Rectangle x:Name="rctOption1" Margin="0" Grid.Column="0" Fill="#FF575963" StrokeThickness="0.5" Stroke="Black"/>
+            <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" FontSize="48">1</TextBox>
+            <Button x:Name="btnOption1" Grid.Column="0" Opacity="0" Click="btnOption1_Click"/>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition SharedSizeGroup="A"/>
+                    <RowDefinition SharedSizeGroup="A"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition SharedSizeGroup="A"/>
+                        <ColumnDefinition SharedSizeGroup="A"/>
+                        <ColumnDefinition SharedSizeGroup="A"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Rectangle x:Name="rctOption2" Grid.Column="0" Fill="#FF575963" StrokeThickness="0.51" Stroke="Black"/>
+                    <TextBox Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" FontSize="48">2</TextBox>
+                    <Button x:Name="btnOption2" Grid.Column="0" Opacity="0" Click="btnOption2_Click"/>
+
+                    <Rectangle x:Name="rctOption3" Grid.Column="1" Fill="#FF575963" StrokeThickness="0.5" Stroke="Black"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" FontSize="48">3</TextBox>
+                    <Button x:Name="btnOption3" Grid.Column="1" Opacity="0" Click="btnOption3_Click"/>
+
+                    <Rectangle x:Name="rctOption4" Grid.Column="2" Fill="#FF575963" StrokeThickness="0.5" Stroke="Black"/>
+                    <TextBox Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" FontSize="48">4</TextBox>
+                    <Button x:Name="btnOption4" Grid.Column="2" Opacity="0" Click="btnOption4_Click"/>
+                </Grid>
+
+                <Rectangle x:Name="rctOptionModerate" Grid.Row="1" Fill="#FF575963" StrokeThickness="0.5" Stroke="Black"/>
+                <TextBox Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" FontSize="40">moderate</TextBox>
+                <Button x:Name="btnOptionModerate" Grid.Row="1" Opacity="0" Click="btnOptionModerate_Click"/>
+
+
+            </Grid>
+
+            <Rectangle x:Name="rctOption5" Grid.Column="2" Fill="#FF575963" StrokeThickness="0.5" Stroke="Black"/>
+            <TextBox  Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" FontSize="48">5</TextBox>
+            <Button x:Name="btnOption5" Grid.Column="3" Opacity="0" Click="btnOption5_Click"/>
+        </Grid>
+        <Border CornerRadius="10" Margin="0"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="1" BorderBrush="Black">
+        </Border>
+
+    </Grid>
+</UserControl>

@@ -5,27 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:The_Oracle"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1500" Background="#FF212126">
+        Title="The Oracle" Height="800" Width="1584" Background="#FF212126">
     <Grid>
 
         <Grid HorizontalAlignment="left" VerticalAlignment="Stretch" Width="400">
             <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#FF3E3F45" RadiusX="10" RadiusY="10" Margin="10"/>
-            <Button x:Name="btnOpenDev" Content="Open Dev" Margin="0,20,20,0" VerticalAlignment="Top" Click="btnOpenDev_Click" Height="35" Background="#FF575963" Foreground="White" HorizontalAlignment="Right" Width="175"/>
-            <Button x:Name="btnCloseDev" Content="Close" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Height="35" Width="175" Click="btnCloseDev_Click" Background="#FF575963" Foreground="White"/>
-            <Rectangle HorizontalAlignment="Stretch" Height="5" Margin="20,65,20,0" Stroke="Black" VerticalAlignment="Top" Fill="#FF2C2C30" StrokeThickness="0" RadiusX="3" RadiusY="3"/>
-            <WrapPanel Margin="19,88,21,0" Height="109" VerticalAlignment="Top">
-                <local:UserControl1 Width="100" Height="25" Margin="5,5,5,5"/>
-                <local:UserControl1 Width="100" Height="25" Margin="5,5,5,5"/>
-                <local:UserControl1 Width="100" Height="25" Margin="5,5,5,5"/>
-                <local:UserControl1 Width="100" Height="25" Margin="5,5,5,5"/>
-                <local:UserControl1 Width="100" Height="25" Margin="5,5,5,5"/>
-            </WrapPanel>
+            <Rectangle Height="5" Margin="20,356,20,0" Stroke="Black" VerticalAlignment="Top" Fill="#FF2C2C30" StrokeThickness="0" RadiusX="3" RadiusY="3"/>
+            <Label x:Name="label" Content="Tags" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" FontSize="20" Background="{x:Null}" Foreground="White"/>
+            <Border CornerRadius="10" BorderBrush="#FF262942" BorderThickness="2,2,2,2" Margin="0,62,20,0" HorizontalAlignment="Right" Width="360" Height="242" VerticalAlignment="Top" >
+                <WrapPanel Name="wrpTags" Margin="0"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <!--Stuff goes here at runtime-->
+                </WrapPanel>
+            </Border>
+            <Button x:Name="btnClearTags" Content="clear" Margin="0,309,20,0" Click="btnClearTags_Click" Height="32" VerticalAlignment="Top" Background="#FF575963" Foreground="White" FontSize="20" HorizontalAlignment="Right" Width="67"/>
+            <local:QualitySelector x:Name="qtslQuality" HorizontalAlignment="Center" Margin="0,426,0,0" VerticalAlignment="Top" Height="136" Width="360"/>
+            <Label Content="Quality" HorizontalAlignment="Left" Margin="20,384,0,0" VerticalAlignment="Top" FontSize="20" Background="{x:Null}" Foreground="White"/>
+            <Button x:Name="btnClearQuality" Content="clear" Margin="0,567,20,0" Click="btnClearQuality_Click" Height="32" VerticalAlignment="Top" Background="#FF575963" Foreground="White" FontSize="20" HorizontalAlignment="Right" Width="67"/>
+            <Button x:Name="btnAllTags" Content="all" Margin="20,309,0,0" Click="btnAllTags_Click" Height="32" VerticalAlignment="Top" Background="#FF575963" Foreground="White" FontSize="20" HorizontalAlignment="Left" Width="67"/>
         </Grid>
         <Grid Margin="400,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <TextBox x:Name="tbxPunDisplay" BorderThickness="0" Text="Help me, I'm trapped in a fortune cookie factory" TextWrapping="WrapWithOverflow" VerticalContentAlignment="Center" FontSize="66" FontFamily="Brush Script MT" FontWeight="Normal" TextAlignment="Center" IsReadOnly="True" Background="{x:Null}" Foreground="White" RenderTransformOrigin="0.502,0.589" Margin="265,137,277,138" />
             <Image x:Name="imgCrystalBall" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" Source="/crystal_ball.png"/>
-            <Button x:Name="btnFetchAPun" Content="Fetch a Pun" HorizontalAlignment="Left" Margin="40,0,0,40" Width="190" Click="btnFetchAPun_Click" Height="77" VerticalAlignment="Bottom" Background="#FF575963" Foreground="White" FontSize="30"/>
+            <Image x:Name="imgComplete" Margin="10,10,10,10" Source="/GreenUsedCircle.png" Opacity="0.21" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Uniform" Visibility="Hidden"/>
+            <TextBox x:Name="tbxPunDisplay" BorderThickness="0" Text="" TextWrapping="WrapWithOverflow" VerticalContentAlignment="Center" FontSize="66" FontFamily="Brush Script MT" FontWeight="Normal" TextAlignment="Center" IsReadOnly="True" Background="{x:Null}" Foreground="White" RenderTransformOrigin="0.502,0.589" VerticalAlignment="Center" HorizontalAlignment="Center" MaxWidth="1000" Width="700"/>
+            <Button x:Name="btnFetchAPun" Content="Consult" HorizontalAlignment="Left" Margin="40,0,0,40" Width="190" Click="btnFetchAPun_Click" Height="77" VerticalAlignment="Bottom" Background="#FF575963" Foreground="White" FontSize="30"/>
             <Button x:Name="btnMarkUsed" Content="Mark Used" Margin="0,0,40,40" Click="btnMarkUsed_Click" Height="77" VerticalAlignment="Bottom" Background="#FF575963" Foreground="White" FontSize="30" HorizontalAlignment="Right" Width="190"/>
         </Grid>
+        <Border CornerRadius="10" BorderBrush="#FF575963" BorderThickness="2,2,2,2" Margin="0,10,10,0" HorizontalAlignment="Right" Width="172" Height="382" VerticalAlignment="Top" >
+            <Grid VerticalAlignment="stretch" HorizontalAlignment="stretch" Margin="5,0,5,5">
+                <Label x:Name="lblQuality" Content="Quality: " HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="20" Background="{x:Null}" Foreground="White"/>
+                <WrapPanel x:Name="wrpEntryTags" Margin="0,42,0,0">
+                    <!--Stuff goes here at runtime-->
+                </WrapPanel>
+            </Grid>
+        </Border>
     </Grid>
 </Window>
