@@ -34,7 +34,6 @@ C:\Users\nmbro\source\repos\The Oracle\bin\Debug\netcoreapp3.0\runtimes\win-arm\
 C:\Users\nmbro\source\repos\The Oracle\bin\Debug\netcoreapp3.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\nmbro\source\repos\The Oracle\bin\Debug\netcoreapp3.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\nmbro\source\repos\The Oracle\bin\Debug\netcoreapp3.0\runtimes\win-x86\native\e_sqlite3.dll
-C:\Users\nmbro\source\repos\The Oracle\obj\Debug\netcoreapp3.0\The Oracle.csprojAssemblyReference.cache
 C:\Users\nmbro\source\repos\The Oracle\obj\Debug\netcoreapp3.0\tag.g.cs
 C:\Users\nmbro\source\repos\The Oracle\obj\Debug\netcoreapp3.0\tag.baml
 C:\Users\nmbro\source\repos\The Oracle\obj\Debug\netcoreapp3.0\GeneratedInternalTypeHelper.g.cs
@@ -86,3 +85,11 @@ D:\repos\The-Oracle\obj\Debug\netcoreapp3.0\QualitySelector.baml
 D:\repos\The-Oracle\obj\Debug\netcoreapp3.0\BasicTag.g.cs
 D:\repos\The-Oracle\obj\Debug\netcoreapp3.0\BasicTag.baml
 D:\repos\The-Oracle\bin\Debug\netcoreapp3.0\punsdb.db
+C:\Users\nmbro\source\repos\The Oracle\obj\Debug\netcoreapp3.0\The Oracle.csproj.AssemblyReference.cache
+C:\Users\nmbro\source\repos\The Oracle\obj\Debug\netcoreapp3.0\BasicTag.g.cs
+C:\Users\nmbro\source\repos\The Oracle\obj\Debug\netcoreapp3.0\QualitySelector.g.cs
+C:\Users\nmbro\source\repos\The Oracle\obj\Debug\netcoreapp3.0\BasicTag.baml
+C:\Users\nmbro\source\repos\The Oracle\obj\Debug\netcoreapp3.0\QualitySelector.baml
+C:\Users\nmbro\source\repos\The Oracle\obj\Debug\netcoreapp3.0\The Oracle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nmbro\source\repos\The Oracle\obj\Debug\netcoreapp3.0\The Oracle.csproj.CoreCompileInputs.cache
+C:\Users\nmbro\source\repos\The Oracle\obj\Debug\netcoreapp3.0\The Oracle.genruntimeconfig.cache
