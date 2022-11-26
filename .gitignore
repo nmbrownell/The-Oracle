@@ -4,3 +4,4 @@
 .vs/The Oracle/v16/Server/sqlite3/storage.ide-wal
 bin/
 obj/
+*.db-journal
