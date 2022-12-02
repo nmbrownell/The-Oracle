@@ -45,7 +45,6 @@ D:\repos\The-Oracle\obj\Release\netcoreapp3.0\The Oracle.csproj.CopyComplete
 D:\repos\The-Oracle\obj\Release\netcoreapp3.0\The Oracle.dll
 D:\repos\The-Oracle\obj\Release\netcoreapp3.0\The Oracle.pdb
 D:\repos\The-Oracle\obj\Release\netcoreapp3.0\The Oracle.genruntimeconfig.cache
-D:\repos\The-Oracle\bin\Release\netcoreapp3.0\punsdb.db
 C:\Users\nmbro\source\repos\The Oracle\bin\Release\netcoreapp3.0\The Oracle.exe
 C:\Users\nmbro\source\repos\The Oracle\bin\Release\netcoreapp3.0\The Oracle.deps.json
 C:\Users\nmbro\source\repos\The Oracle\bin\Release\netcoreapp3.0\The Oracle.runtimeconfig.json

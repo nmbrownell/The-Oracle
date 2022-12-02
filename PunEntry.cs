@@ -3,6 +3,7 @@
     public class PunEntry
     {
         public int UID { get; set; }
+        public string Category{ get; set; }
         public string Text { get; set; }
         public int Quality { get; set; }
         public string Tags { get; set; }

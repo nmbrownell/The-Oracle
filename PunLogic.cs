@@ -13,13 +13,14 @@ namespace The_Oracle
             private int _lastMin = -1;
             private int _lastMax = -1;
             private string[] _lastTags = new string[] { };
+            private string[] _lastCategories = new string[] { };
             private bool _lastIncludeUsed;
 
             public bool stale = false;
 
-            public bool IsNew(int min, int max, string[] tags, bool include_used = false)
+            public bool IsNew(int min, int max, string[] tags, string[] categories, bool include_used = false)
             {
-                if (!stale && (_lastMin == min && _lastMax == max && _lastTags.Equals(tags) && _lastIncludeUsed == include_used))
+                if (!stale && (_lastMin == min && _lastMax == max && _lastTags.Equals(tags)  && _lastCategories.Equals(categories)  && _lastIncludeUsed == include_used))
                 {
                     return false;
                 }
@@ -27,6 +28,7 @@ namespace The_Oracle
                 _lastMin = min;
                 _lastMax = max;
                 _lastTags = tags;
+                _lastCategories = categories;
                 _lastIncludeUsed = include_used;
                 stale = false;
 
@@ -45,24 +47,29 @@ namespace The_Oracle
             return punDb.FetchAllTags();
         }
 
+        internal string[] GetAllCategories()
+        {
+            return punDb.FetchAllCategories();
+        }
+
         public PunEntry MarkUsed(PunEntry entry, bool used)
         {
             lastUsed.stale = true;
             return punDb.MarkUsed(entry, used);
         }
 
-        public PunEntry GetRandom(int min, int max, string[] tags, bool include_used = false)
+        public PunEntry GetRandom(int min, int max, string[] tags, string[] categories, bool include_used = false)
         {
             if (lastPunEntries.Length != 0)
             {
                 index = ++index % lastPunEntries.Length; // Cycle back to beginning if we reach the end
             }
 
-            bool isNew = lastUsed.IsNew(min, max, tags, include_used);
+            bool isNew = lastUsed.IsNew(min, max, tags, categories, include_used);
 
             if (isNew)
             {
-                lastPunEntries = punDb.Search(min, max, tags, include_used);
+                lastPunEntries = punDb.Search(min, max, tags, categories, include_used);
                 lastPunEntries = lastPunEntries.OrderBy(a => rng.Next()).ToArray();
                 index = 0;
             }

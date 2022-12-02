@@ -21,14 +21,10 @@
           "SQLitePCLRaw.core": "2.0.6"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.Data.Sqlite.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Microsoft.Data.Sqlite.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Data.Sqlite.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Microsoft.Data.Sqlite.dll": {}
         }
       },
       "SQLitePCLRaw.bundle_e_sqlite3/2.0.6": {
@@ -284,30 +280,31 @@
   },
   "packageFolders": {
     "C:\\Users\\nmbro\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nmbro\\source\\repos\\The Oracle\\The Oracle.csproj",
+      "projectUniqueName": "D:\\repos\\The-Oracle\\The Oracle.csproj",
       "projectName": "The Oracle",
-      "projectPath": "C:\\Users\\nmbro\\source\\repos\\The Oracle\\The Oracle.csproj",
+      "projectPath": "D:\\repos\\The-Oracle\\The Oracle.csproj",
       "packagesPath": "C:\\Users\\nmbro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nmbro\\source\\repos\\The Oracle\\obj\\",
+      "outputPath": "D:\\repos\\The-Oracle\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\nmbro\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -337,8 +334,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -350,6 +346,14 @@
           {
             "name": "Microsoft.NETCore.App.Host.win-x64",
             "version": "[3.0.3, 3.0.3]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.0.0, 3.0.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.0.0, 3.0.0]"
           }
         ],
         "frameworkReferences": {
@@ -360,7 +364,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

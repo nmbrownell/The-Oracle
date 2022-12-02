@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\nmbro\source\repos\The Oracle\obj\Release\netcoreapp3.0\
+D:\repos\The-Oracle\obj\Release\netcoreapp3.0\
 The_Oracle
 none
 false
-TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_0
-C:\Users\nmbro\source\repos\The Oracle\App.xaml
-41559750118
+TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_0;
+D:\repos\The-Oracle\App.xaml
+4-1569503161
 
-81467159453
-1961395861427
+8838379379
+196-1649470129
 BasicTag.xaml;MainWindow.xaml;QualitySelector.xaml;tag.xaml;
 
 False
