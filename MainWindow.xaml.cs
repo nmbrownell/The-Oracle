@@ -28,6 +28,7 @@ namespace The_Oracle
             InitializeComponent();
 
             UpdateTags();
+            UpdateCategories();
         }
 
         private void UpdateTags()
@@ -40,20 +41,39 @@ namespace The_Oracle
             }
         }
 
-        private void btnSearchByCriteria_Click(object sender, RoutedEventArgs e)
+        private void UpdateCategories()
         {
-            List<string> tags = new List<string>();
-            foreach (Tag tag in this.wrpTags.Children)
+            string[] topics = punLogic.GetAllCategories();
+            wrpCategories.Children.Clear();
+            foreach (string topic in topics)
             {
-                if (tag.Selected)
-                {
-                    tags.Add(tag.Text);
-                }
+                wrpCategories.Children.Add(new Tag(topic));
             }
-
-            PunEntry entry = punLogic.GetRandom(qtslQuality.Min, qtslQuality.Max, tags.ToArray());
-            tbxPunDisplay.Text = entry.Text;
         }
+
+        //private void btnSearchByCriteria_Click(object sender, RoutedEventArgs e)
+        //{
+        //    List<string> tags = new List<string>();
+        //    foreach (Tag tag in this.wrpTags.Children)
+        //    {
+        //        if (tag.Selected)
+        //        {
+        //            tags.Add(tag.Text);
+        //        }
+        //    }
+
+        //    List<string> categories = new List<string>();
+        //    foreach (Tag category in this.wrpCategories.Children)
+        //    {
+        //        if (tag.Selected)
+        //        {
+        //            categories.Add(category.Text);
+        //        }
+        //    }
+
+        //    PunEntry entry = punLogic.GetRandom(qtslQuality.Min, qtslQuality.Max, tags.ToArray(), categories.ToArray());
+        //    tbxPunDisplay.Text = entry.Text;
+        //}
 
         private void btnFetchAPun_Click(object sender, RoutedEventArgs e)
         {
@@ -66,7 +86,16 @@ namespace The_Oracle
                 }
             }
 
-            activeEntry = punLogic.GetRandom(qtslQuality.Min, qtslQuality.Max, tags.ToArray());
+            List<string> categories = new List<string>();
+            foreach (Tag category in this.wrpCategories.Children)
+            {
+                if (category.Selected)
+                {
+                    categories.Add(category.Text);
+                }
+            }
+
+            activeEntry = punLogic.GetRandom(qtslQuality.Min, qtslQuality.Max, tags.ToArray(), categories.ToArray());
             UpdateDisplayedInfo();
         }
 
@@ -103,6 +132,7 @@ namespace The_Oracle
 
             UpdateDisplayedInfo();
             UpdateTags();
+            UpdateCategories();
         }
 
         private void btnClearTags_Click(object sender, RoutedEventArgs e)

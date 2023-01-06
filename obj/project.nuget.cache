@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "M4be+gP++jZpO/aH5wBeCHUPCjeVc2Zgy8BokrNX2eYUFCS0C3o7xH+vpStbIpNMf/SLftSVwYjG1qS3mmrlOQ==",
+  "dgSpecHash": "qn4EeqCiSi040XruPIUBntS7OtCyqsTMgA3kpb6pP68UqPEXYqDTturI3KmaEgl91LfE77B7wR2fSnAz6V3zCA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nmbro\\source\\repos\\The Oracle\\The Oracle.csproj",
+  "projectFilePath": "D:\\repos\\The-Oracle\\The Oracle.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nmbro\\.nuget\\packages\\microsoft.data.sqlite\\6.0.10\\microsoft.data.sqlite.6.0.10.nupkg.sha512",
     "C:\\Users\\nmbro\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.10\\microsoft.data.sqlite.core.6.0.10.nupkg.sha512",
@@ -11,8 +11,10 @@
     "C:\\Users\\nmbro\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.6\\sqlitepclraw.lib.e_sqlite3.2.0.6.nupkg.sha512",
     "C:\\Users\\nmbro\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.0.6\\sqlitepclraw.provider.e_sqlite3.2.0.6.nupkg.sha512",
     "C:\\Users\\nmbro\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\nmbro\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512",
     "C:\\Users\\nmbro\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
-    "C:\\Users\\nmbro\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512"
+    "C:\\Users\\nmbro\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\nmbro\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512"
   ],
   "logs": []
 }

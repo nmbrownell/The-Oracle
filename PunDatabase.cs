@@ -11,7 +11,7 @@ namespace The_Oracle
         private SqliteConnection Connection;
 
 #if DEBUG
-        string datasource = @"Data Source=..\..\..\PunDB\punsdb-dev.db";
+        string datasource = @"Data Source=..\..\..\PunDB\punsdb.db";
 #else
         string datasource = @"Data Source=..\..\..\PunDB\punsdb.db";
 #endif
@@ -33,7 +33,7 @@ namespace The_Oracle
             }
         }
 
-        public PunEntry[] Search(int min, int max, string[] tags, bool include_used = false)
+        public PunEntry[] Search(int min, int max, string[] tags, string[] categories, bool include_used = false)
         {            
             string qry = "SELECT * FROM PUNS ";
 
@@ -66,6 +66,27 @@ namespace The_Oracle
                 qry += "AND IS_TOPICAL = 0 ";
             }
 
+            // Add category filter
+            if (categories != null && categories.Length != 0)
+            {
+                for (int i = 0; i < categories.Count(); i++)
+                {
+                    if (i == 0)
+                    {
+                        qry += "AND ( ";
+                    }
+                    qry += "CATEGORY LIKE " + "'%" + categories[i] + "%' ";
+                    if (i != categories.Count() - 1)
+                    {
+                        qry += "OR ";
+                    }
+                    else
+                    {
+                        qry += ")";
+                    }
+                }
+            }
+
             qry += (include_used ? "" : " AND USED = 0");
 
             Open();
@@ -77,6 +98,30 @@ namespace The_Oracle
         public string[] FetchAllTags(bool include_used = false)
         {
             string qry = "SELECT TAGS FROM PUNS" + (include_used ? "" : " WHERE USED = 0");
+
+            Open();
+
+            SqliteCommand cmd = new SqliteCommand(qry, Connection);
+            using SqliteDataReader rdr = cmd.ExecuteReader();
+
+            List<string> allTags = new List<string>();
+
+            while (rdr.Read())
+            {
+                string tags = rdr.IsDBNull(0) ? "" : rdr.GetString(0);
+                if (tags != "")
+                {
+                    string[] splitTags = tags.Split(' ');
+                    allTags.AddRange(splitTags);
+                }
+            }
+
+            return allTags.Distinct().OrderBy(s => s).ToArray();
+        }
+
+        public string[] FetchAllCategories(bool include_used = false)
+        {
+            string qry = "SELECT CATEGORY FROM PUNS" + (include_used ? "" : " WHERE USED = 0");
 
             Open();
 
@@ -117,11 +162,12 @@ namespace The_Oracle
             {
                 PunEntry entry = new PunEntry();
                 entry.UID = reader.GetInt32(0);
-                entry.Text = reader.GetString(1);
-                entry.Quality = reader.GetInt32(2);
-                entry.Tags = reader.IsDBNull(3) ? "" : reader.GetString(3);
-                entry.IsTopical = reader.GetInt32(4) == 0 ? false : true;
-                entry.Used = reader.GetInt32(5) == 0 ? false : true;
+                entry.Category = reader.GetString(1);
+                entry.Text = reader.GetString(2);
+                entry.Quality = reader.GetInt32(3);
+                entry.Tags = reader.IsDBNull(4) ? "" : reader.GetString(4);
+                entry.IsTopical = reader.GetInt32(5) == 0 ? false : true;
+                entry.Used = reader.GetInt32(6) == 0 ? false : true;
 
                 entries.Add(entry);
             }

@@ -84,7 +84,6 @@ D:\repos\The-Oracle\obj\Debug\netcoreapp3.0\QualitySelector.g.cs
 D:\repos\The-Oracle\obj\Debug\netcoreapp3.0\QualitySelector.baml
 D:\repos\The-Oracle\obj\Debug\netcoreapp3.0\BasicTag.g.cs
 D:\repos\The-Oracle\obj\Debug\netcoreapp3.0\BasicTag.baml
-D:\repos\The-Oracle\bin\Debug\netcoreapp3.0\punsdb.db
 C:\Users\nmbro\source\repos\The Oracle\obj\Debug\netcoreapp3.0\The Oracle.csproj.AssemblyReference.cache
 C:\Users\nmbro\source\repos\The Oracle\obj\Debug\netcoreapp3.0\BasicTag.g.cs
 C:\Users\nmbro\source\repos\The Oracle\obj\Debug\netcoreapp3.0\QualitySelector.g.cs
