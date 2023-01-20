@@ -8,9 +8,10 @@
     "additionalProbingPaths": [
       "C:\\Users\\nmbro\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\nmbro\\.nuget\\packages",
-      "C:\\Microsoft\\Xamarin\\NuGet"
+      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {
+      "System.Reflection.Metadata.MetadataUpdater.IsSupported": false,
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
     }
   }

@@ -1,20 +1,20 @@
 ﻿The Oracle
-
+1.0.0.0
 
 winexe
 C#
 .cs
-D:\repos\The-Oracle\obj\Debug\netcoreapp3.0\
+c:\Users\nmbro\source\repos\nmbrownell\The-Oracle\obj\Debug\netcoreapp3.0\
 The_Oracle
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_0;
-D:\repos\The-Oracle\App.xaml
+c:\Users\nmbro\source\repos\nmbrownell\The-Oracle\App.xaml
 4-1569503161
 
-8838379379
+10699042710
 196-1649470129
 BasicTag.xaml;MainWindow.xaml;QualitySelector.xaml;tag.xaml;
 
-False
+True
 
